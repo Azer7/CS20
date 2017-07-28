@@ -1,0 +1,27 @@
+sudoku solver
+
+maze creator and solver
+
+sorting algorithm visualizer
+
+grid game where you have to visit every tile
+
+laser board game
+
+hexagonal movement game
+
+frogger
+
+atari breakout
+
+2048
+
+web statistics crawler / social media crawler
+
+pirate translator (close to fuddify)
+
+stick-man - random word http://nifty.stanford.edu/2006/reges-anagrams/dict3.pl
+
+anagram solver - http://nifty.stanford.edu/2006/reges-anagrams/dict3.pl
+
+spell checker - http://nifty.stanford.edu/2006/reges-anagrams/dict3.pl
