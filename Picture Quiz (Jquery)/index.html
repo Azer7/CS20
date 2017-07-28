@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title> Quiz </title>
+    <link rel="stylesheet" href="quiz.css" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="quiz.js"></script>
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <div id="title-div">
+            <h1 id="title-header">Quiz</h1>
+        </div>
+        <hr />
+
+        <div id="score" style="display: none;">
+            <div id="score-inner">
+                <span id="score-text">Your Score is </span>
+                <button id="rate-button">Rate</button>
+            </div>
+        </div>
+
+        <div id="quiz-wrapper">
+            <ul id="quiz-questions">
+                <li id="q1">
+                    <h1>What is the capital of Australia?</h1>
+                    <div class="option1 quiz-option unselected" data-option="1">
+                        <img src="images/question1/sydney.jpg" class="img_text" />
+                        <p>Sydney</p>
+                    </div>
+                    <div class="option2 quiz-option unselected" data-option="2">
+                        <img src="images/question1/melbourne.jpg" class="img_text" />
+                        <p>Melbourne</p>
+                    </div>
+                    <div class="option3 quiz-option unselected" data-option="3">
+                        <img src="images/question1/canberra.jpg" class="img_text" />
+                        <p>Canberra</p>
+                    </div>
+                    <div class="option4 quiz-option unselected" data-option="4">
+                        <img src="images/question1/perth.jpg" class="img_text" />
+                        <p>Perth</p>
+                    </div>
+                </li>
+
+                <li id="q2">
+                    <h1>Which one is a Lemur?</h1>
+                    <div class="option1 quiz-option unselected" data-option="1"><img src="images/question2/lemur1.jpg" class="img_full" /></div>
+                    <div class="option2 quiz-option unselected" data-option="2"><img src="images/question2/lemur2.jpg" class="img_full" /></div>
+                    <div class="option3 quiz-option unselected" data-option="3"><img src="images/question2/lemur3.jpg" class="img_full" /></div>
+                    <div class="option4 quiz-option unselected" data-option="4"><img src="images/question2/lemur4.jpg" class="img_full" /></div>
+                </li>
+
+                <li id="q3">
+                    <h1 id="q3-header">Who was the first Prime Minister of Canada?</h1>
+                    <div class="option1 quiz-option unselected" data-option="1">
+                        <img src="images/question3/abraham.jpg" class="img_text" />
+                        <p>Abraham Lincoln</p>
+                    </div>
+                    <div class="option2 quiz-option unselected" data-option="2">
+                        <img src="images/question3/mackenzie.jpg" class="img_text" />
+                        <p>Alexander Mackenzie</p>
+                    </div>
+                    <div class="option3 quiz-option unselected" data-option="3">
+                        <img src="images/question3/washington.jpg" class="img_text" />
+                        <p>George Washington</p>
+                    </div>
+                    <div class="option4 quiz-option unselected" data-option="4">
+                        <img src="images/question3/macdonald.jpg" class="img_text" />
+                        <p>John A. Macdonald</p>
+                    </div>
+                </li>
+
+                <li id="q4">
+                    <h1>Which one is a Siamese cat?</h1>
+                    <div class="option1 quiz-option unselected" data-option="1"><img src="images/question4/coon.jpg" class="img_full" /></div>
+                    <div class="option2 quiz-option unselected" data-option="2"><img src="images/question4/siamese.jpg" class="img_full" /></div>
+                    <div class="option3 quiz-option unselected" data-option="3"><img src="images/question4/shorthair.jpg" class="img_full" /></div>
+                    <div class="option4 quiz-option unselected" data-option="4"><img src="images/question4/bengal.jpg" class="img_full" /></div>
+                </li>
+
+                <li id="q5">
+                    <h1>What was the first Star Wars episode?</h1>
+                    <div class="option1 quiz-option unselected" data-option="1">
+                        <img src="images/question5/return-jedi.jpg" class="img_text" />
+                        <p>Return of the Jedi</p>
+                    </div>
+                    <div class="option2 quiz-option unselected" data-option="2">
+                        <img src="images/question5/revenge-sith.jpg" class="img_text" />
+                        <p>Revenge of the Sith</p>
+                    </div>
+                    <div class="option3 quiz-option unselected" data-option="3">
+                        <img src="images/question5/phantom-menace.jpg" class="img_text" />
+                        <p>The Phantom Menace</p>
+                    </div>
+                    <div class="option4 quiz-option unselected" data-option="4">
+                        <img src="images/question5/empire-strikes.jpg" class="img_text" />
+                        <p>The Empire Strikes Back</p>
+                    </div>
+                </li>
+            </ul>
+            <!-- nav bar-->
+            <nav>
+                <button class="prev inactive">back</button>
+                <div id="d1" class="dot dot-active"></div>
+                <div id="d2" class="dot"></div>
+                <div id="d3" class="dot"></div>
+                <div id="d4" class="dot"></div>
+                <div id="d5" class="dot"></div>
+                <button class="next">next</button>
+            </nav>
+        </div>
+
+        <div id="rating-wrapper" style="display:none;">
+            <h2 class="rating-question">How would you rate this quiz?</h2>
+            <p id="rating-slider-value">5</p>
+            0<input type="range" id="rating-slider" min="0" max="10">10
+            <hr />
+
+            <h2 class="rating-question">What was your favourite question?</h2>
+            <select id="rating-fav-question">
+                <option value="question1">What is the capital of Australia?</option>
+                <option value="question3">Which one is a Lemur?</option>
+                <option value="question2">Who was the first Prime Minister of Canada?</option>
+                <option value="question4">Which one is a Siamese cat?</option>
+                <option value="question5">What was the first Star Wars episode?</option>
+            </select>
+            <hr />
+
+            <h2 class="rating-question">What type of question would you like<br />to see more of on a future quiz?</h2>
+            <div id="rating-radio-wrapper">
+                <input type="radio" name="question" value="animal" checked="checked" /><span class="rating-radio">Animal</span><br />
+                <input type="radio" name="question" value="history" /><span class="rating-radio">History</span><br />
+                <input type="radio" name="question" value="trivia" /><span class="rating-radio">Trivia</span><br />
+                <input type="radio" name="question" value="science" /><span class="rating-radio">Science</span>
+            </div>
+            <hr />
+
+            <h2 class="rating-question">Do you have any additional comments?</h2>
+            <textarea id="rating-comment" rows="4" cols="40" placeholder="Enter comments here..."></textarea>
+            <div id="rating-submit-wrapper">
+                <button id="rating-submit">Submit</button>
+            </div>
+        </div>
+
+        <div id="complete" style="display:none;">
+            <h1 id="complete-heading">Thanks! </h1>
+            <div id="additional-comments" style="display:none">
+                <h2 id="comment-heading">your additional comments have been recieved:</h2>
+                <p id="comment-text"></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
